@@ -103,6 +103,23 @@ This section is optional. These instructions are useful if the user prefers to s
     ```
 
 
+### Add SSH key to `ssh-agent`
+
+1. After the Windows OpenSSH Authentication Agent has started, run the following:
+
+    ```bash
+    ssh-add "C:/Users/user/.ssh/id_ed25519"
+    ```
+
+    Note: Change the path to the key file if needed.
+
+1. Enter the passphrase.
+
+1. The key will be cached by the agent service which persists even after restarts.
+
+To clear the cached keys, run `ssh-add -D`. More information on the `ssh-add` command can be found [here](https://linux.die.net/man/1/ssh-add).
+
+
 ### SSH authentication using Git for Windows
 
 This section is only relevant if you are storing your SSH key passphrase using Window's OpenSSH Authentication Agent. To ensure Git for Windows uses the agent where you've stored your credentials and not the one bundled with Git for Windows, force Git to use the system's SSH binary:
