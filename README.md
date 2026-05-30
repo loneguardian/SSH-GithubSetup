@@ -72,9 +72,9 @@ git@github.com:<repo_owner>/<repo_name>.git
 If you have more than one SSH key, you should use the SSH `config` file to map host names to the correct keys (refer to [this section](#optional-ssh-config-file-for-multiple-github-users)).
 
 
-## [Optional] Windows OpenSSH Authentication Agent service
+## [Optional] Passphrase caching: Windows OpenSSH Authentication Agent service
 
-This section is optional. These instructions are useful if the user prefers to store SSH key passphrase using OpenSSH Auth Agent service on Windows (`ssh-agent`).
+This section is optional. These instructions are useful if you prefer to store your SSH key passphrase using the Windows OpenSSH Authentication Agent (Windows' native `ssh-agent`), so you do not have to enter it for every SSH connection.
 
 
 ### Enable the OpenSSH Authentication Agent service
@@ -93,7 +93,7 @@ This section is optional. These instructions are useful if the user prefers to s
 
 #### Option 2: Terminal
 
-1. Open a PowerShell terminal with Administrator privillege.
+1. Start a PowerShell terminal session as Administrator.
 
 1. Execute the following:
 
@@ -113,16 +113,16 @@ This section is optional. These instructions are useful if the user prefers to s
 
     Note: Change the path to the key file if needed.
 
-1. Enter the passphrase.
+1. Enter the correct passphrase and the key will be cached.
 
-1. The key will be cached by the agent service which persists even after restarts.
+**IMPORTANT**: The key will be cached by the agent service which persists even after restarts and deletion of the key files.
 
 To clear the cached keys, run `ssh-add -D`. More information on the `ssh-add` command can be found [here](https://linux.die.net/man/1/ssh-add).
 
 
-### SSH authentication using Git for Windows
+### Troubleshooting: Password caching does not work
 
-This section is only relevant if you are storing your SSH key passphrase using Window's OpenSSH Authentication Agent. To ensure Git for Windows uses the agent where you've stored your credentials and not the one bundled with Git for Windows, force Git to use the system's SSH binary:
+If the passphrase caching does not work, there is a possibility that the incorrect `ssh.exe` is being used. To ensure Git for Windows uses the agent where you've stored your credentials and not the one bundled with Git for Windows, force Git to use the system's SSH binary:
 
 ```bash
 git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
@@ -130,10 +130,9 @@ git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
 
 [Source: GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows#troubleshooting-ssh-agent-conflicts-in-windows)
 
-<!--
-This is a mirrored post:
+<!-- This is a related post. The following related posts should be checked for consistency:
 1. [Git-WindowsSetup repo](https://github.com/loneguardian/Git-WindowsSetup#ssh-authentication-using-git-for-windows)
-1. [SSH-GithubSetup repo](https://github.com/loneguardian/SSH-GithubSetup#ssh-authentication-using-git-for-windows)
+2. [SSH-GithubSetup repo](https://github.com/loneguardian/SSH-GithubSetup#ssh-authentication-using-git-for-windows)
 -->
 
 
