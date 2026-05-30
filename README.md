@@ -142,3 +142,15 @@ This section is optional. These instructions are useful if a computer requires S
     Note: Change the `<accessing_user>` placeholder in the URL to the username which replaced `user1` or `user2`.
 
     For an example in the URL `gh.alice:mona/test`, `alice` is the user with the SSH key. `mona` is the repo owner. `test` is the repo name.
+
+1. To test the SSH connection, run the following in a terminal:
+
+    ```bash
+    ssh -T gh.<accessing_user>
+    ```
+
+    You should receive the following response:
+
+    ```
+    Hi <accessing_user>! You've successfully authenticated, but GitHub does not provide shell access.
+    ```
