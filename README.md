@@ -8,17 +8,6 @@ These instructions are primarily based on documentation found in GitHub Docs:
 1. [Working with SSH key passphrases](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases?platform=windows)
 
 
-## Git for Windows SSH
-
-To ensure Git for Windows uses the agent where you've stored your credentials, force Git to use the system's SSH binary by running:
-
-```bash
-git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
-```
-
-[link to GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows#troubleshooting-ssh-agent-conflicts-in-windows)
-
-
 ## Create SSH key
 
 1. Create the key using `ssh-keygen`:
@@ -112,6 +101,17 @@ This section is optional. These instructions are useful if the user prefers to s
     Get-Service -Name ssh-agent | Set-Service -StartupType AutomaticDelayedStart
     Start-Service ssh-agent
     ```
+
+
+### Git for Windows `SSH.exe`
+
+To ensure Git for Windows uses the agent where you have stored the credentials, force Git to use the system's SSH binary by running:
+
+```bash
+git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
+```
+
+[link to GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows#troubleshooting-ssh-agent-conflicts-in-windows)
 
 
 ## [Optional] Modify or add the SSH config file for multiple GitHub users
