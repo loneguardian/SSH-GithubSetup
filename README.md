@@ -1,9 +1,10 @@
-# SSH: My setup for GitHub SSH access
+# SSH: Setup GitHub SSH access on Windows (Git for Windows)
 
-GitHub Docs documentation:
+This repo is created to curate the key points on setting up SSH access to GitHub repo in a Windows environment (Git for Windows).
+
+These instructions are primarily based on documentation found in GitHub Docs:
 
 1. [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows)
-
 1. [Working with SSH key passphrases](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases?platform=windows)
 
 
