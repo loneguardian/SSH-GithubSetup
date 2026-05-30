@@ -69,7 +69,7 @@ In the local git repo, point to the remote repo using the following SSH URL form
 git@github.com:<repo_owner>/<repo_name>.git
 ```
 
-If you have more than one SSH key, you should use the SSH `config` file to map host names to the correct keys (refer to [this section](#optional-modify-or-add-the-ssh-config-file-for-multiple-github-users)).
+If you have more than one SSH key, you should use the SSH `config` file to map host names to the correct keys (refer to [this section](#optional-ssh-config-file-for-multiple-github-users)).
 
 
 ## [Optional] Windows OpenSSH Authentication Agent service
@@ -120,7 +120,7 @@ This is a mirrored post:
 -->
 
 
-## [Optional] Modify or add the SSH config file for multiple GitHub users
+## [Optional] SSH config file for multiple GitHub users
 
 This section is optional. These instructions are useful if a computer requires SSH access on more than one GitHub accounts.
 
