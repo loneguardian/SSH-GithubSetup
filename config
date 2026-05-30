@@ -1,0 +1,14 @@
+# example ssh config file for two users, user1 and user2
+Host gh.user1
+  IdentityFile    = ~/.ssh/key1
+  IdentitiesOnly yes
+
+Host gh.user2
+  IdentityFile    = ~/.ssh/key2
+  IdentitiesOnly yes
+
+Host gh.*
+  HostName github.com
+  User git
+
+# for remote repo url use gh.<accessing_user>:<repo_owner>/<repo_name>.git
