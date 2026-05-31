@@ -18,7 +18,7 @@ These instructions are primarily based on documentation found in GitHub Docs:
 
     Note: This email address should correspond to the GitHub account's email address.
 
-2. On windows, make sure to set the correct path to store the key, the default path will fail and cause the key files to be stored at `Users/username` folder:
+2. On Windows, make sure to set the correct path to store the key, the default path will fail and cause the key files to be stored at `Users/username` folder:
 
     ```
     C:\Users\user/.ssh/id_ed25519
@@ -38,11 +38,11 @@ These instructions are primarily based on documentation found in GitHub Docs:
 
 1. On GitHub's page > Top right user icon (User navigation menu) > Settings > SSH and GPG keys (on the left menu) > New SSH key.
 
-2. Enter a title (e.g. name to identify the device using the SSH key).
+2. Enter a Title (e.g. name to identify the device using the SSH key).
 
 3. Make sure Key Type is Authentication Key.
 
-4. Open the public key file (stored in the `.ssh` folder) using a text editor.
+4. Open the public key file (`*.pub` file stored in the `.ssh` folder) using a text editor.
 
     On Windows it is at:
 
@@ -122,7 +122,9 @@ To clear the cached keys, run `ssh-add -D`. More information on the `ssh-add` co
 
 ### Troubleshooting: Password caching does not work
 
-If the passphrase caching does not work, there is a possibility that the incorrect `ssh.exe` is being used. To ensure Git for Windows uses the agent where you've stored your credentials and not the one bundled with Git for Windows, force Git to use the system's SSH binary:
+Possible cause: If the passphrase caching does not work, there is a possibility that the incorrect `ssh.exe` is being used.
+
+To ensure Git for Windows uses the agent where you've stored your credentials and not the one bundled with Git for Windows, force Git to use the system's SSH binary via the following command:
 
 ```bash
 git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
