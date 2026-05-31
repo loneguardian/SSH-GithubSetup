@@ -12,7 +12,7 @@ These instructions are primarily based on documentation found in GitHub Docs:
 
 1. Create the key using `ssh-keygen`:
 
-    ```bash
+    ```bat
     ssh-keygen -t ed25519 -C "<email_address>"
     ```
 
@@ -109,7 +109,7 @@ This section is optional. These instructions are useful if you prefer to store y
 
 1. After the Windows OpenSSH Authentication Agent has started, run the following:
 
-    ```bash
+    ```bat
     ssh-add "C:/Users/user/.ssh/id_ed25519"
     ```
 
@@ -176,7 +176,7 @@ This section is optional. These instructions are useful if a computer requires S
 
 1. To test the SSH connection, run the following in a terminal:
 
-    ```bash
+    ```bat
     ssh -T gh.<accessing_user>
     ```
 
