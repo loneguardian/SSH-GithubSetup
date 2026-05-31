@@ -16,7 +16,7 @@ These instructions are primarily based on documentation found in GitHub Docs:
     ssh-keygen -t ed25519 -C "<email_address>"
     ```
 
-    Note: This email address should correspond to the GitHub account's email address.
+    This email address should correspond to the GitHub account's email address.
 
 2. On Windows, make sure to set the correct path to store the key, the default path will fail and cause the key files to be stored at `Users/username` folder:
 
@@ -50,9 +50,10 @@ These instructions are primarily based on documentation found in GitHub Docs:
     %USERPROFILE%\.ssh
     ```
     
-    Note: If the key file is named `id_ed25519`, open the `id_ed25519.pub` file.
+    If the key file is named `id_ed25519`, open the `id_ed25519.pub` file.
 
-    **WARNING**: DO NOT copy and paste the private key file (i.e. the `id_ed25519` file).
+> [!CAUTION]
+> **DO NOT** copy and paste the contents in the private key file (i.e. the `id_ed25519` file).
 
 5. Copy the public key from the text editor and paste it on the Add new SSH key page > Key field.
 
@@ -69,7 +70,8 @@ In the local git repo, point to the remote repo using the following SSH URL form
 git@github.com:<repo_owner>/<repo_name>.git
 ```
 
-If you have more than one SSH key, you should use the SSH `config` file to map host names to the correct keys (refer to [this section](#optional-ssh-config-file-for-multiple-github-users)).
+> [!TIP]
+> If you have more than one SSH key, you should use the SSH `config` file to map host names to the correct keys (refer to [this section](#optional-ssh-config-file-for-multiple-github-users)).
 
 
 ## [Optional] Passphrase caching: Windows OpenSSH Authentication Agent service
@@ -111,11 +113,15 @@ This section is optional. These instructions are useful if you prefer to store y
     ssh-add "C:/Users/user/.ssh/id_ed25519"
     ```
 
-    Note: Change the path to the key file if needed.
+    Change the path and filename of the key file if needed.
 
-1. Enter the correct passphrase and the key will be cached.
+2. Enter the correct passphrase and the key will be cached.
 
-**IMPORTANT**: The key will be cached by the agent service which persists even after restarts and deletion of the key files.
+> [!WARNING]
+> The cached keys will persist even after:
+> - Stopping of the service;
+> - Restarts; and
+> - Deletion of the key files
 
 To clear the cached keys, run `ssh-add -D`. More information on the `ssh-add` command can be found [here](https://linux.die.net/man/1/ssh-add).
 
