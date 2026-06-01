@@ -34,7 +34,7 @@ These instructions are primarily based on documentation found in GitHub Docs:
 3. Enter the passphrase twice and the key will be generated.
 
 
-## Add the SSH public key to GitHub user settings
+## Add SSH public key to GitHub user settings
 
 1. On GitHub's page > Top right user icon (User navigation menu) > Settings > SSH and GPG keys (on the left menu) > New SSH key.
 
@@ -62,9 +62,9 @@ These instructions are primarily based on documentation found in GitHub Docs:
 To test the SSH connection, refer to [instructions on GitHub docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection).
 
 
-## Git repo URL
+## Connect to GitHub repo via SSH URL
 
-In the local git repo, point to the remote repo using the following SSH URL format:
+In the local Git repo, set the remote SSH URL using the following format:
 
 ```
 git@github.com:<repo_owner>/<repo_name>.git
@@ -164,7 +164,7 @@ This section is optional. These instructions are useful if a computer requires S
 
 1. In the `config` file, change the placeholders for username (`user1` and `user2`) and SSH key file (`key1` and `key2`) accordingly.
 
-1. In the git repo, point to the remote repo URL as:
+1. In the local Git repo, set the remote SSH URL using the following format:
 
     ```
     gh.<accessing_user>:<repo_owner>/<repo_name>
@@ -172,7 +172,10 @@ This section is optional. These instructions are useful if a computer requires S
 
     Note: Change the `<accessing_user>` placeholder in the URL to the username which replaced `user1` or `user2`.
 
-    For an example in the URL `gh.alice:mona/test`, `alice` is the user with the SSH key. `mona` is the repo owner. `test` is the repo name.
+    For example, in the URL `gh.alice:mona/test`:
+    - `alice` is the user accessing the repo using the SSH key;
+    - `mona` is the repo owner; and
+    - `test` is the repo name.
 
 1. To test the SSH connection, run the following in a terminal:
 
